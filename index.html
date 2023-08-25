@@ -6,35 +6,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculator</title>
   <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
 </head>
 
 <body>
-
-  <div class="container">
-    <div class="display">0</div>
+  <div class="calculator">
+    <div class="display">
+      <div class="previous" data-previous-operand></div>
+      <div class="current" data-current-operand></div>
+    </div>
     <div class="buttons">
-      <div class="decimal"><button data-action="decimal">.</button></div>
-      <div class="zero"><button>0</button></div>
-      <div class="one"><button>1</button></div>
-      <div class="two"><button>2</button></div>
-      <div class="three"><button>3</button></div>
-      <div class="four"><button>4</button></div>
-      <div class="five"><button>5</button></div>
-      <div class="six"><button>6</button></div>
-      <div class="seven"><button>7</button></div>
-      <div class="eight"><button>8</button></div>
-      <div class="nine"><button>9</button></div>
-      <div class="plus"><button data-action="add">&plus;</button></div>
-      <div class="minus"><button data-action="subtract">&minus;</button></div>
-      <div class="times"><button data-action="multiply">&times;</button></div>
-      <div class="divide"><button data-action="divide">&divide;</button></div>
-      <div class="equal"><button data-action="calculate">&equals;</button></div>
-      <div class="delete"><button>C</button></div>
-      <div class="clear"><button data-action="clear">AC</button></div>
+      <button class="zero" data-number>0</button>
+      <button class="one" data-number>1</button>
+      <button class="two" data-number>2</button>
+      <button class="three" data-number>3</button>
+      <button class="four" data-number>4</button>
+      <button class="five" data-number>5</button>
+      <button class="six" data-number>6</button>
+      <button class="seven" data-number>7</button>
+      <button class="eight" data-number>8</button>
+      <button class="nine" data-number>9</button>
+      <button class="decimal" data-number>.</button>
+      <button class="plus" data-operator>+</button>
+      <button class="minus" data-operator>-</button>
+      <button class="times" data-operator>*</button>
+      <button class="divide" data-operator>/</button>
+      <button class="equal" data-equal>=</button>
+      <button class="CLR" data-clear>CLR</button>
+      <button class="DEL" data-delete>DEL</button>
     </div>
   </div>
-
-  <script src="scripts.js"></script>
 </body>
 
 </html>

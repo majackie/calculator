@@ -1,49 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Teko&display=swap');
+
 * {
-  margin: 0;
   padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Teko', sans-serif;
 }
 
-.container {
+body {
+  background: black;
+}
+
+.calculator {
   display: grid;
-  grid-template-rows: 1fr 2fr;
+  grid-template-rows: 2fr 4fr;
   grid-auto-columns: 1fr;
   grid-auto-rows: 1fr;
   gap: 0px 0px;
   grid-auto-flow: row;
-  width: 30rem;
-  font-size: 3rem;
-  border: 1px solid #ccc;
+  justify-items: stretch;
+
+  height: 100vh;
+  width: 100vw;
 }
 
 .display {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  grid-auto-columns: 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
   grid-area: 1 / 1 / 2 / 2;
-  right: 0;
+
+  background: lightgrey;
   text-align: right;
   padding: 10px;
-  background-color: #f0f0f0;
+  word-wrap: break-word;
+  word-break: break-all;
+}
+
+.previous {
+  grid-area: 1 / 1 / 2 / 2;
+  font-size: 1.5rem;
+}
+
+.current {
+  grid-area: 2 / 1 / 3 / 2;
+  font-size: 2.5rem;
 }
 
 .buttons {
-  display: grid; 
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr; 
-  grid-template-rows: 1fr 1fr 1fr 1fr; 
-  gap: 0px 0px; 
-  grid-template-areas: 
-    "seven eight nine divide delete"
-    "four five six times clear"
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  gap: 0px 0px;
+  grid-auto-flow: row;
+  grid-template-areas:
+    "seven eight nine divide DEL"
+    "four five six times CLR"
     "one two three minus equal"
-    "zero zero dot plus equal"; 
-  grid-area: 2 / 1 / 3 / 2; 
-  text-align: center;
-  align-items: center;
+    "zero zero decimal plus equal";
+  grid-area: 2 / 1 / 3 / 2;
 }
 
 .zero {
   grid-area: zero;
-}
-
-.dot {
-  grid-area: dot;
 }
 
 .one {
@@ -82,6 +103,10 @@
   grid-area: nine;
 }
 
+.decimal {
+  grid-area: decimal;
+}
+
 .plus {
   grid-area: plus;
 }
@@ -100,20 +125,34 @@
 
 .equal {
   grid-area: equal;
-  height: 100%;
 }
 
-.delete {
-  grid-area: delete;
+.CLR {
+  grid-area: CLR;
 }
 
-.clear {
-  grid-area: clear;
+.DEL {
+  grid-area: DEL;
 }
 
-.buttons button {
-  width: 100%;
-  height: 100%;
-  font-size: 3rem;
-  padding: 0;
+button {
+  cursor: pointer;
+  font-size: 2rem;
+  border: 1px solid white;
+  outline: none;
+}
+
+button:hover {
+  background: lightgrey;
+}
+
+@media(min-width: 768px) {
+  .calculator {
+    height: 30rem;
+    width: 30rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
 }
