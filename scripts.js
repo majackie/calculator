@@ -1,3 +1,5 @@
+// ChatGPT-3.5 (https://chat.openai.com/) was used for assistance in writing this code.
+
 const previousOperandDisplay = document.querySelector("[data-previous-operand]");
 const currentOperandDisplay = document.querySelector("[data-current-operand]");
 const numberButtons = document.querySelectorAll("[data-number]");
